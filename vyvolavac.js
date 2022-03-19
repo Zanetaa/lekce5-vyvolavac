@@ -44,11 +44,28 @@ function tahnoutJmeno() {
     jmena.splice(vyherniIndex, 1);
 
     // Výherní jméno si uložíme do pole k ostatním výherním
-    tazenaJmena.push(vyherniJmeno);
+    ///tazenaJmena.push(vyherniJmeno);
 
     let vyherce = document.querySelector('#vyherka');
     vyherce.textContent = vyherniJmeno;
 
     let seznam = document.querySelector('#seznam');
     seznam.textContent = tazenaJmena;
+
+//Přidávej vyvolaná jména na začátek "Předchozí oběti"
+
+    tazenaJmena.unshift(vyherniJmeno);
+
+
+//Přidej počítadlo, kolik se vybralo holek
+
+    let vypisCislo = document.querySelector('.vypisCislo');
+    vypisCislo.textContent = tazenaJmena.length
+
+}
+
+//Přidej tlačítko na resetování vyvolávače
+
+function resetuj() {
+    window.location.reload()
 }
